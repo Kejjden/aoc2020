@@ -15,16 +15,13 @@ class TestIt(unittest.TestCase):
         
     def test_part2(self):
         puzzle_input = [
-            1721,
-            979,
-            366,
-            299,
-            675,
-            1456
+            '1-3 a: abcde',
+            '1-3 b: cdefg',
+            '2-9 c: ccccccccc'
         ]
         
         answer = solve2(puzzle_input)
-        self.assertEqual(answer, 241861950)
+        self.assertEqual(answer, 1)
         
 if __name__ == '__main__':
     unittest.main()

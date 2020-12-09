@@ -17,7 +17,20 @@ def solve1(data):
     return valid
 
 def solve2(data):
-    return 0
+    valid = 0
+    for row in data:
+        row_parts = re.split(r'\:| |\-', row)
+
+        occurance_char = row_parts[2]
+        password = row_parts[4]
+        chars = [
+            password[int(row_parts[0]) - 1],
+            password[int(row_parts[1]) - 1]
+        ]
+
+        if chars.count(occurance_char) == 1:
+            valid += 1
+    return valid
     
 if __name__ == "__main__":
     with open("input.txt", "r") as input_file:
