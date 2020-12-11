@@ -1,24 +1,15 @@
 import re
 
 def can_contain(contains, target, rules):
-    if "no other" in contains:
+    if "no other" in [c['name'] for c in contains]:
         return False
 
-    if target in contains:
+    if target in [c['name'] for c in contains]:
         return True
     
-    return any([can_contain(rules[c], target, rules) for c in contains])
+    return any([can_contain(rules[c['name']], target, rules) for c in contains])
 
 def parse_rules(data):
-    rules = {}
-    
-    for rule in data:
-        matches = re.findall(r'([^\d\W]+ [^\d\W]+) ba', rule)
-        rules[matches[0]] = matches[1:]
-    
-    return rules
-    
-def parse_rules_with_count(data):
     rules = {}
     
     for rule in data:
@@ -40,8 +31,6 @@ def count_containing(target, rules, index):
         return count
     else:
         return 1
-        
-    
 
 def solve1(data):
     target = 'shiny gold'
@@ -57,7 +46,7 @@ def solve1(data):
     return len(valid_colors)
 
 def solve2(data):
-    rules = parse_rules_with_count(data)
+    rules = parse_rules(data)
     target = 'shiny gold'
     
     count = count_containing(target, rules, 1) - 1
