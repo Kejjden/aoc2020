@@ -1,31 +1,26 @@
 import unittest
-from day11 import solve1, solve2
+from day12 import solve1, solve2
 
 class TestIt(unittest.TestCase):
     
     def __init__(self, *args, **kwargs):
         super(TestIt, self).__init__(*args, **kwargs)
         self.puzzle_input = [
-            'L.LL.LL.LL',
-            'LLLLLLL.LL',
-            'L.L.L..L..',
-            'LLLL.LL.LL',
-            'L.LL.LL.LL',
-            'L.LLLLL.LL',
-            '..L.L.....',
-            'LLLLLLLLLL',
-            'L.LLLLLL.L',
-            'L.LLLLL.LL'
+            'F10',
+            'N3',
+            'F7',
+            'R90',
+            'F11'
         ]
         
         
     def test_part1(self):
         answer = solve1(self.puzzle_input)
-        self.assertEqual(answer, 37)
+        self.assertEqual(answer, 25)
 
     def test_part2(self):
         answer = solve2(self.puzzle_input)
-        self.assertEqual(answer, 26)
+        self.assertEqual(answer, 286)
 
 if __name__ == '__main__':
     unittest.main()
