@@ -1,5 +1,4 @@
 from functools import reduce
-from operator import mul
 
 def solve1(data):
     earliest_time = int(data[0])
