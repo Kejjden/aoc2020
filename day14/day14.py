@@ -61,7 +61,6 @@ def solve2(data):
 
     return sum([v for k, v in mem.items()])
 
-# low 1416141071932
 if __name__ == "__main__":
     with open("input.txt", "r") as input_file:
         data = input_file.read().splitlines()
