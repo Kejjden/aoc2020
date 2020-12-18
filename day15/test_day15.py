@@ -1,5 +1,5 @@
 import unittest
-from day15 import solve1
+from day15 import solve
 
 class TestIt(unittest.TestCase):
     
@@ -16,7 +16,7 @@ class TestIt(unittest.TestCase):
         ]
         
         for i in inputs:
-            answer = solve1(i['input'], 2020)
+            answer = solve(i['input'], 2020)
             self.assertEqual(answer, i['answer'])
 
     def test_part2(self):
@@ -25,7 +25,7 @@ class TestIt(unittest.TestCase):
         ]
         
         for i in inputs:
-            answer = solve1(i['input'], 30000000)
+            answer = solve(i['input'], 30000000)
             self.assertEqual(answer, i['answer'])
 
 if __name__ == '__main__':

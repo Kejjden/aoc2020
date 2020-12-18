@@ -1,6 +1,6 @@
 from collections import deque
 
-def solve1(data, target_round):
+def solve(data, target_round):
     history = deque(map(int, data))
     round_offset = len(history)
     game_round = len(history) + 1
@@ -28,5 +28,5 @@ def solve1(data, target_round):
 if __name__ == "__main__":
     with open("input.txt", "r") as input_file:
         data = input_file.read().split(',')
-        print("Part1: ", solve1(data, 2020))
-        print("Part2: ", solve1(data, 30000000))
+        print("Part1: ", solve(data, 2020))
+        print("Part2: ", solve(data, 30000000))
